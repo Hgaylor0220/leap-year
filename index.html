@@ -9,23 +9,23 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
-  <title>Factorials</title>
+  <title>Character Quiz</title>
 </head>
 <body
     <div class="container">
-      <h1>Compute Factorials!</h1>
+      <h1>Leap year detector</h1>
 
-      <form id="factorialize">
+      <form id="leap-year">
         <div class="form-group">
-          <label for="entry">Enter a number less than 5 to find the factor!</label>
-          <input id="digit" type="number">
+          <label for="year">Enter a year and find out if it's a leap year:</label>
+          <input id="year" type="text">
         </div>
 
         <button type="submit" class="btn-alert">Find out!</button>
       </form>
 
       <div id="result">
-        <p><span class="entry"></span> is the factor of <span class="originalNumber"></span>.</p>
+        <p><span class="year"></span> is <span class="not"></span> a leap year.</p>
       </div>
     </div>
   </body>
