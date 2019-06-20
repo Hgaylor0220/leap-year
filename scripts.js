@@ -1,26 +1,27 @@
-var factorialize = function(num) {
-  if (num === 0 || num === 1)
-    return 1;
-  else if (num >= 6)
-    return ("Enter a number less than 6")
-
-  for (var i = num - 1; i >= 1; i--) {
-    num *= i;
+// business logic
+var leapYear = function(year) {
+  if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
+    return true;
+  } else {
+    return false;
   }
-  return num;
+};
 
-}
-
+// user interface logic
 $(document).ready(function() {
-  $("form#factorialize").submit(function(event) {
+  $("form#leap-year").submit(function(event) {
     event.preventDefault();
-    var entry = parseInt($("input#digit").val());
-    var result = factorialize(entry)
-  
-      $(".entry").text(result);
-      $(".originalNumber").text(entry);
+    var year = parseInt($("input#year").val());
+    var result = leapYear(year);
 
+    $(".year").text(year);
 
-    $("#result").show("#result");
+    if (!result) {                 // same as writing if (result === false)
+      $(".not").text("not");
+    } else {
+      $(".not").text("");
+    }
+
+    $("#result").show();
   });
 });
